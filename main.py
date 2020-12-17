@@ -11,17 +11,17 @@ window.configure(padx=20,pady=20)
 
 def typed(value):
     
-    if value != '=':
+    if value != '=' and len(entry_variable.get()) < 10:
         entry_variable.set(entry_variable.get() + str(value))
     else:
         result = entry_variable.get()
         entry.delete(0,tkinter.END)
-        entry.insert(0,str(eval(result))
+        entry.insert(0,str(eval(result)))
 
     entry.icursor(tkinter.END)
 
 def changed(*args):
-     
+    return 
     if len(entry_variable.get()) >= 10:
         entry_variable.set(entry_variable.get()[:-1])
 
